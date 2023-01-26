@@ -12,3 +12,5 @@ To create remote {git remote add newtest https://github.com/Pragyaakar/InfosysWo
 7.if required,push again
 To swithch from one branch to another 
 {git checkout newbranchname}
+To remove error "fatal: unable to access 'https://github.com/Pragyaakar/InfosysWork.git/': SSL certificate problem: unable to get local issuer certificate"
+type this command {git config --global http.sslVerify false}
