@@ -16,3 +16,6 @@ To remove error "fatal: unable to access 'https://github.com/Pragyaakar/InfosysW
 type this command {git config --global http.sslVerify false}
 To remove error "fatal: Unsupported SSL backend 'channel'. Supported SSL backends: 	openssl 	schannel"
 type this command {git config --global --unset http.sslBackend}
+error: failed to push some refs to 'https://github.com/Pragyaakar/InfosysWork.git'
+{git pull --rebase LMS main}
+{git push -u LMS main}
