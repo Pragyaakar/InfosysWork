@@ -19,3 +19,7 @@ type this command {git config --global --unset http.sslBackend}
 error: failed to push some refs to 'https://github.com/Pragyaakar/InfosysWork.git'
 {git pull --rebase LMS main}
 {git push -u LMS main}
+or 
+{git fetch LMS main:tmp }
+{git rebase tmp}
+{git push -u LMS main}
