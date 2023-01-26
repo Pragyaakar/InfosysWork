@@ -1,6 +1,6 @@
 # Github Steps
 Steps:
-1. Initialise Repository (git innit command)
+1. Initialise Repository (git init command)
 2. Commit (1- git add. 2- git commit -a - m "any thing you can add in message"
 3. ConFig Git
 4. add Remote {create remote eg. origin & branch name - master 2- git push origin master}
