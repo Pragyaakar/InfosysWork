@@ -14,3 +14,5 @@ To swithch from one branch to another
 {git checkout newbranchname}
 To remove error "fatal: unable to access 'https://github.com/Pragyaakar/InfosysWork.git/': SSL certificate problem: unable to get local issuer certificate"
 type this command {git config --global http.sslVerify false}
+To remove error "fatal: Unsupported SSL backend 'channel'. Supported SSL backends: 	openssl 	schannel"
+type this command {git config --global --unset http.sslBackend}
