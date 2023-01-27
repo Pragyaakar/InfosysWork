@@ -1,0 +1,166 @@
+<?xml version="1.0"?><!DOCTYPE pdf PUBLIC "-//big.faceless.org//report" "report-1.1.dtd">
+<pdf>
+<head>
+<#assign font_Roboto_regular = "https://7275617-sb1.app.netsuite.com/core/media/media.nl?id=7337&c=7275617_SB1&h=-cJ2YL82U81VLd0Io6VXJ9ELEeq3n2r0bbmLH8vgPOQ31W1w&_xt=.ttf" />
+<#assign font_Roboto_bold = "https://7275617-sb1.app.netsuite.com/core/media/media.nl?id=7338&c=7275617_SB1&h=AUUL7pUVtMuiT1U0xPG9zeP98xjs38PFi5_qxAA9Pf3woijD&_xt=.ttf" />
+<#assign font_Roboto_italic = "https://7275617-sb1.app.netsuite.com/core/media/media.nl?id=7339&c=7275617_SB1&h=tkBWAk27pYSKGjqGROu20_aXAuqnrtqcImbsCGH0jVDoaWoF&_xt=.ttf" />
+<#assign font_Roboto_bolditalic = "https://7275617-sb1.app.netsuite.com/core/media/media.nl?id=7340&c=7275617_SB1&h=aMN9QqCtOyxvUV7ouI6WmcsAmr3ItutlOh7u-MLXqmmxOXAt&_xt=.ttf" />
+  <link type="font" name="Roboto" subtype="TrueType" src="${font_Roboto_regular?html}" src-bold="${font_Roboto_bold?html}" src-italic="${font_Roboto_italic?html}" src-bolditalic="${font_Roboto_bolditalic?html}" bytes="2"/>
+    <macrolist>
+        <macro id="nlheader">
+            <table class="header" style="width: 1144px;"><tr>
+	<td style="padding: 0px; width: 140px;"><#if subsidiary.logo?length != 0><img src="${subsidiary.logo@url}" style="float: left; width: 160px; height: 70px;" /> </#if></td>
+	<td align="left" style="font-family: Roboto;font-size: 8/10pt; color: rgb(0, 0, 0); width: 140px; margin-top:10px;"><span>${subsidiary.mainaddress_text}</span></td>
+	<td style="font-family: Roboto; padding: 6px 26px 2px; color: rgb(0, 0, 0);font-size: 8/10pt; width: 827px;">
+	<table align="left" style="width:450px;">
+      <tr>
+		<td style="font-size: 22pt; font-weight: bold; font-family: Roboto; padding: 5px 0px 2px 130px; color: rgb(0, 0, 0);">Invoice</td>
+		</tr>
+       <tr>
+		<td style="font-size: 8/10pt; font-family: Roboto; padding: 6px 0px 2px 130px; color: rgb(0, 0, 0);">Invoice:&nbsp;#${record.tranid}</td>
+		</tr>
+		<tr>
+		<td style="font-size: 8/10pt; font-family: Roboto; padding: 6px 0px 2px 130px; color: rgb(0, 0, 0);">Date:&nbsp;${record.trandate}</td>
+		</tr></table>
+	</td>
+	</tr></table>
+        </macro>
+      
+        <macro id="nlfooter">
+            <table style="width: 100%; font-size: 8pt;"><tr>
+	<td style="padding: 0;font-size: 9/11pt; font-family: Roboto; color: #000000;"><barcode codetype="code128" showtext="true" value="${record.tranid}"/></td>
+	<td align="right" style="padding: 0;font-size: 9/11pt; font-family: Roboto; color: #000000;"><pagenumber/> of <totalpages/></td>
+	</tr></table>
+        </macro>
+    </macrolist>
+    <style type="text/css">* {
+		
+			font-family: Roboto;
+		
+		}
+		table {
+			font-size: 9pt;
+			table-layout: fixed;
+		}
+        th {
+            font-weight: bold;
+            font-size: 8pt;
+            vertical-align: middle;
+            padding: 5px 6px 3px;
+            background-color: #e3e3e3;
+            color: #333333;
+        }
+        td {
+            padding: 4px 6px;
+        }
+		td p { align:left }
+</style>
+</head>
+<body style="margin-top:25pt; margin-bottom:36pt; margin-left:36pt; margin-right:36pt;" header="nlheader" header-height="10%" footer="nlfooter" footer-height="20pt" padding="0.5in 0.5in 0.5in 0.5in" size="Letter">
+    <table style="width: 815px;"><tr>
+	<td align="left" style="font-family: Roboto; color: rgb(0, 0, 0); width: 330px; font-size: 9/11pt;letter-spacing:0.5px;line-height:normal;">&nbsp;</td>
+	<td align="left" style="font-family: Roboto; color: rgb(0, 0, 0); width: 380px; font-size: 9/11pt;letter-spacing:0.5px;line-height:normal;">Customer Name:&nbsp;${record.entity}</td>
+	<td align="left" style="font-family: Roboto; color: rgb(0, 0, 0); width: 200px; font-size: 9/11pt;letter-spacing:0.5px;line-height:normal;"></td>
+	</tr>
+	<tr>
+	<td align="left" style="font-family: Roboto; color: rgb(0, 0, 0); width: 330px; font-size: 9/11pt;letter-spacing:0.5pxline-height:normal;">&nbsp;</td>
+	<td align="left" style="font-family: Roboto; color: rgb(0, 0, 0); width: 380px; font-size: 9/11pt;letter-spacing:0.5px;line-height:normal;">Contact Phone:&nbsp;${record.billphone}</td>
+	<td align="left" style="font-family: Roboto; color: rgb(0, 0, 0); width: 200px; font-size: 9/11pt;letter-spacing:0.5pxline-height:normal;"></td>
+	</tr>
+	<tr>
+	<td align="left" style="font-family: Roboto; color: rgb(0, 0, 0); width: 330px; font-size: 9/11pt;letter-spacing:0.5pxline-height:normal;">&nbsp;</td>
+	<td align="left" style="font-family: Roboto; color: rgb(0, 0, 0); width: 380px; font-size: 9/11pt;letter-spacing:0.5px;line-height:normal;">Contact Email:&nbsp;${record.email}</td>
+	<td align="left" style="font-family: Roboto; color: rgb(0, 0, 0); width: 200px; font-size: 9/11pt;letter-spacing:0.5px;line-height:normal;"></td>
+	</tr></table>
+   <table style="width: 100%; margin-top: 10px;"><tr>
+	<td class="addressheader" colspan="3" style="font-size: 8/10pt; padding: 6px 0 2px; font-weight: bold;font-family: Roboto; color: #000000;letter-spacing:0.5px;line-height:normal;">${record.billaddress@label}</td>
+	<td class="addressheader" colspan="3" style="font-size: 8/10pt; padding: 6px 0 2px; font-weight: bold;font-family: Roboto; color: #000000;letter-spacing:0.5px;line-height:normal;">Send Payment To</td>
+	<td class="totalboxtop" colspan="5" style="font-size: 8/10pt; padding: 6px 0 2px; font-weight: bold;font-family: Roboto; background-color: #e3e3e3; color: #000000;letter-spacing:0.5px;line-height:normal;">${record.total@label?upper_case}</td>
+	</tr>
+	<tr>
+	<td colspan="3" rowspan="2" style="font-size: 8/10pt; padding: 6px 0 2px; font-family: Roboto; color: #000000;letter-spacing:0.5px;line-height:normal;">${record.billaddress}</td>
+      <td colspan="3" rowspan="2" style="font-size: 8/10pt; padding: 6px 0 2px; font-family: Roboto; color: #000000;letter-spacing:0.5px;line-height:normal;">${subsidiary.mainaddress_text}<br />&nbsp;</td>
+      <td align="right" colspan="5" style="font-size: 28pt; font-family: Roboto; padding-top: 20px; background-color: #e3e3e3;letter-spacing:0.5px;line-height:normal;">${record.total}</td>
+	</tr>
+	<tr>
+	<td align="right" class="totalboxbot" colspan="5" style="font-size: 8/10pt; padding: 6px 0 2px; font-family: Roboto; background-color: #e3e3e3; color: #000000;letter-spacing:0.5px;line-height:normal;">${record.duedate@label}: ${record.duedate}</td>
+	</tr></table>
+
+<table class="body" style="width: 100%; margin-top: 10px;"><tr>
+	<th style="font-size: 9/11pt; padding: 0px; font-weight: bold; font-family: Roboto; color: #000000;background-color: #e3e3e3;letter-spacing:0.5px;line-height:normal;">${record.terms@label}</th>
+	<th style="font-size: 9/11pt; padding: 0px; font-weight: bold; font-family: Roboto; color: #000000;background-color: #e3e3e3;letter-spacing:0.5px;line-height:normal;">${record.duedate@label}</th>
+	<th style="font-size: 9/11pt; padding: 0px; font-weight: bold; font-family: Roboto; color: #000000;background-color: #e3e3e3;letter-spacing:0.5px;line-height:normal;">${record.otherrefnum@label}</th>
+	<th style="font-size: 9/11pt; padding: 0px; font-weight: bold; font-family: Roboto; color: #000000;background-color: #e3e3e3;letter-spacing:0.5px;line-height:normal;">${record.salesrep@label}</th>
+	</tr>
+	<tr>
+	<td style="font-size: 9/11pt; padding: 6px 0 2px; font-family: Roboto; color: #000000;letter-spacing:0.5px;line-height:normal;">${record.terms}</td>
+	<td style="font-size: 9/11pt; padding: 6px 0 2px; font-family: Roboto; color: #000000;letter-spacing:0.5px;line-height:normal;">${record.duedate}</td>
+	<td style="font-size: 9/11pt; padding: 6px 0 2px; font-family: Roboto; color: #000000;letter-spacing:0.5px;line-height:normal;">${record.otherrefnum}</td>
+	<td style="font-size: 9/11pt; padding: 6px 0 2px; font-family: Roboto; color: #000000;letter-spacing:0.5px;line-height:normal;">${record.salesrep}</td>
+	</tr></table>
+  
+<#if record.item?has_content>
+
+<table style="width: 100%; margin-top: 10px;"><!-- start items --><#list record.item as item><#if item_index==0>
+<thead>
+	<tr>
+	<th colspan="8" style="font-size: 9/11pt; padding:0px; font-weight: bold; font-family: Roboto; color: #000000;background-color: #e3e3e3;width: 190px;letter-spacing:0.5px;line-height:normal;">${item.item@label}</th>
+	<th style="font-size: 9/11pt; padding: 0px; font-weight: bold; font-family: Roboto; color: #000000;background-color: #e3e3e3;letter-spacing:0.5px;line-height:normal;">&nbsp;</th>
+	<th align="left" colspan="8" style="font-size: 9/11pt; padding:0px; font-weight: bold; font-family: Roboto; color: #000000;background-color: #e3e3e3;letter-spacing:0.5px;line-height:normal;;width: 190px;">${item.description@label}</th>
+	<th align="left" colspan="3" style="font-size: 9/11pt; padding:0px; font-weight: bold; font-family: Roboto; color: #000000;background-color: #e3e3e3;width:80px;letter-spacing:0.5px;line-height:normal;">${item.quantity@label}</th>
+	<th align="left" colspan="4" style="font-size: 9/11pt; padding: 0px; font-weight: bold; font-family: Roboto; color: #000000;background-color: #e3e3e3;width:100px;letter-spacing:0.5px;line-height:normal;">${item.rate@label}</th>
+      	<th style="font-size: 9/11pt; padding: 0px; font-weight: bold; font-family: Roboto; color: #000000;background-color: #e3e3e3;letter-spacing:0.5px;line-height:normal;">&nbsp;</th>
+	<th align="left" colspan="4" style="font-size: 9/11pt; padding:0px; font-weight: bold; font-family: Roboto; color: #000000;background-color: #e3e3e3;width:100px;letter-spacing:0.5px;line-height:normal;">${item.amount@label}</th>
+	</tr>
+</thead>
+</#if><tr>
+	<td colspan="8" style="font-size: 9/11pt; font-family: Roboto; padding: 5px; color: #000000;width: 190px;letter-spacing:0px;letter-spacing:0.5px;line-height:normal;justify-content:flex-start; ">${item.item}</td>
+	<td  style="font-size: 9/11pt;padding: 6px 0 2px;  font-weight: bold; font-family: Roboto; color: #000000;letter-spacing:0.5px;line-height:normal;width: 20px;l">&nbsp;</td>
+	<td align="left" colspan="8" line-height="150%" style="font-size: 9/11pt; padding: 3px; font-family: Roboto; color: #000000;width: 190px;letter-spacing:0.5px;line-height:normal;justify-content:flex-start; ">${item.description}</td>
+	<td align="center" colspan="3" line-height="150%" style="font-size: 9/11pt;padding: 6px 0 2px;  font-family: Roboto; color: #000000;width:80px;letter-spacing:0.5px;line-height:normal;">${item.quantity}</td>
+	<td align="left" colspan="4" style="font-size: 9/11pt; padding: 6px 0 2px; font-family: Roboto; color: #000000;width:100px;letter-spacing:0.5px;line-height:normal;">${item.rate}</td>
+  	<td  style="font-size: 9/11pt;padding: 6px 0 2px;  font-weight: bold; font-family: Roboto; color: #000000;letter-spacing:0.5px;line-height:normal;width: 20px;l">&nbsp;</td>
+
+	<td align="left" colspan="4" style="font-size: 9/11pt; padding: 6px 0 2px; font-family: Roboto; color: #000000;width:100px;letter-spacing:0.5px;line-height:normal;">${item.amount}</td>
+	</tr>
+	</#list><!-- end items --></table>
+
+<hr style="width: 100%; color: #d3d3d3; background-color: #d3d3d3; height: 1px;" /></#if>
+<table style="page-break-inside: avoid; width: 100%; margin-top: 10px;"><tr>
+	<td colspan="4">&nbsp;</td>
+	<td align="right" style="font-size: 8/10pt; padding: 6px 0 2px; font-weight: bold; font-family: Roboto; color: #000000;">${record.subtotal@label}</td>
+	<td align="right" style="font-size: 8/10pt; font-family: Roboto; color: #000000;">${record.subtotal}</td>
+	</tr>
+	<#if record.discounttotal !=0>
+	<tr>
+	<td colspan="4">&nbsp;</td>
+	<td align="right" style="font-size: 8/10pt; padding: 6px 0 2px; font-weight: bold; font-family: Roboto; color: #000000;">${record.discounttotal@label}</td>
+	<td align="right">${record.discounttotal}</td>
+	</tr>
+	</#if>
+	<tr>
+	<td colspan="4">&nbsp;</td>
+	<td align="right" style="font-size: 8/10pt; padding: 6px 0 2px; font-weight: bold; font-family: Roboto; color: #000000;">${record.taxtotal@label} (${record.taxrate}%)</td>
+	<td align="right" style="font-size: 8/10pt; font-family: Roboto; color: #000000;">${record.taxtotal}</td>
+	</tr>
+	<tr style="background-color: #e3e3e3; line-height: 200%;">
+	<td background-color="#ffffff" colspan="4">&nbsp;</td>
+	<td align="right" style="font-size: 8/10pt; padding: 6px 0 2px; font-weight: bold; font-family: Roboto; color: #000000;">${record.total@label}</td>
+	<td align="right" style="font-size:8/10pt; font-family: Roboto; color: #000000;">${record.total}</td>
+	</tr></table>
+&nbsp;
+
+<table style="width: 811px;"><tr>
+	<td style="width: 339px; height: 47px; font-size: 8/10pt;font-size: 8/10pt; font-family: Roboto; color: #000000;">Notes:</td>
+	<td style="width: 97px; height: 47px;  font-size: 8/10pt;font-size: 8/10pt; font-family: Roboto; color: #000000;">&nbsp;</td>
+	<td style="width: 177px; height: 47px;  font-size: 8/10pt;font-size: 8/10pt; font-family: Roboto; color: #000000;">Authorized Signature:</td>
+	<td style="width: 313px; height: 47px;  font-size: 8/10pt;font-size: 8/10pt; font-family: Roboto; color: #000000;">&nbsp;</td>
+	</tr>
+	<tr>
+	<td style="width: 339px;  font-size: 8/10pt;font-size: 8/10pt; font-family: Roboto; color: #000000;">${record.custbody_notes}</td>
+	<td style="width: 97px;  font-size: 8/10pt;font-size: 8/10pt; font-family: Roboto; color: #000000;">&nbsp;</td>
+	<td style="width: 177px;  font-size: 8/10pt;font-size: 8/10pt; font-family: Roboto; color: #000000;">Date:</td>
+	<td style="width: 313px;  font-size: 8/10pt;font-size: 8/10pt; font-family: Roboto; color: #000000;">&nbsp;</td>
+	</tr></table>
+</body>
+</pdf>
